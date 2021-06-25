@@ -24,10 +24,7 @@ final class AppCoordinator: Coordinator {
     }
 
     func start() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? MainViewController else {
-            return
-        }
+        let viewController = R.storyboard.main.instantiateInitialViewController()!
         navigationController.pushViewController(viewController, animated: true)
     }
 }
