@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-public protocol RouterType: AnyObject {
+public protocol OldRouterType: AnyObject {
     associatedtype ViewController: UIViewController
     var viewController: ViewController { get }
 }
 
-open class Router<ViewController: UIViewController>: RouterType {
+open class OldRouter<ViewController: UIViewController>: OldRouterType {
 
     public private (set) unowned var viewController: ViewController
 

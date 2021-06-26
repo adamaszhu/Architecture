@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol DetailRouterType: RouterType {
+protocol DetailRouterType: OldRouterType {
     func inject(parentRouter: DetailParentRouterType)
     func close()
 }
 
-final class DetailRouter: Router<DetailViewController>, DetailRouterType {
+final class DetailRouter: OldRouter<DetailViewController>, DetailRouterType {
 
     private weak var parentRouter: DetailParentRouterType?
 

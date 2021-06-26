@@ -12,7 +12,7 @@ public protocol ViewModelType: AnyObject {
     var router: Router { get }
 }
 
-open class ViewModel<Router: RouterType>: ViewModelType {
+open class ViewModel<Router: OldRouterType>: ViewModelType {
 
     public let router: Router
 

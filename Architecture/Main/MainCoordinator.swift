@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-protocol MainRouterType: RouterType, DetailParentRouterType {}
+protocol MainRouterType: OldRouterType, DetailParentRouterType {}
 
-final class MainRouter: Router<MainViewController>, MainRouterType {
+final class MainRouter: OldRouter<MainViewController>, MainRouterType {
 
     func showDetail(_ detail: String) {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
