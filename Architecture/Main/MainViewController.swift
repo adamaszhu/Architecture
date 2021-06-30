@@ -7,11 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: ViewController<MainViewModel> {
 
     @IBOutlet private var textField: UITextField!
-
-    private lazy var viewModel: MainViewModel = MainViewModel(router: MainRouter(viewController: self))
 
     func reset() {
         textField.text = nil

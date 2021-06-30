@@ -2,22 +2,35 @@
 //  Router.swift
 //  Architecture
 //
-//  Created by Adamas on 12/6/21.
+//  Created by Adamas on 28/6/21.
 //
 
-import Foundation
 import UIKit
 
 public protocol RouterType: AnyObject {
-    associatedtype ViewController: UIViewController
-    var viewController: ViewController { get }
+    init(navigationController: UINavigationController)
+    func push(_ viewController: UIViewController)
+    func pop()
+    func popTo(_ viewController: UIViewController)
 }
 
-open class Router<ViewController: UIViewController>: RouterType {
+open class Router: RouterType {
 
-    public private (set) unowned var viewController: ViewController
+    private let navigationController: UINavigationController
 
-    public init(viewController: ViewController) {
-        self.viewController = viewController
+    required public init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+
+    public func push(_ viewController: UIViewController) {
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    public func pop() {
+        navigationController.popViewController(animated: true)
+    }
+
+    public func popTo(_ viewController: UIViewController) {
+        navigationController.popToViewController(viewController, animated: true)
     }
 }
