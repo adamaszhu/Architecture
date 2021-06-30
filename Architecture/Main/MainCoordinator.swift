@@ -8,20 +8,36 @@
 import Foundation
 import UIKit
 
-protocol MainRouterType: OldRouterType, DetailParentRouterType {}
+protocol MainCoordinatorType: CoordinatorType {
 
-final class MainRouter: OldRouter<MainViewController>, MainRouterType {
+    var showDetailAction: (String) -> Void { get set }
+    
+    func showDetail(_ detail: String)
+    func reset()
+}
 
-    func showDetail(_ detail: String) {
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? DetailViewController else {
-            return
-        }
-        viewController.inject(parentRouter: self, detail: detail)
-        self.viewController.navigationController?.pushViewController(viewController, animated: true)
+final class MainCoordinator: Coordinator, MainCoordinatorType {
+
+    var showDetailAction: (String) -> Void = { _ in }
+
+    private let router: RouterType
+
+    private lazy var viewController: MainViewController = R.storyboard.main.instantiateInitialViewController()!
+
+    init(router: RouterType) {
+        self.router = router
     }
 
-    func didShowDetail() {
+    override func start() {
+        viewController.inject(coordinator: self)
+        router.push(viewController)
+    }
+
+    func showDetail(_ detail: String) {
+        showDetailAction(detail)
+    }
+
+    func reset() {
         viewController.reset()
     }
 }

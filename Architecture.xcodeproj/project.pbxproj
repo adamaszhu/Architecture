@@ -15,15 +15,15 @@
 		4222541F267394060009A236 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222541E267394060009A236 /* DetailViewController.swift */; };
 		42225424267443660009A236 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42225423267443660009A236 /* MainCoordinator.swift */; };
 		422254272674436E0009A236 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422254262674436E0009A236 /* MainViewModel.swift */; };
-		4222542A267443870009A236 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42225429267443870009A236 /* DetailRouter.swift */; };
+		4222542A267443870009A236 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42225429267443870009A236 /* DetailCoordinator.swift */; };
 		4222542D267443920009A236 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222542C267443920009A236 /* DetailViewModel.swift */; };
-		42225430267443A70009A236 /* DetailParentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222542F267443A70009A236 /* DetailParentRouter.swift */; };
-		42225435267446470009A236 /* OldRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42225434267446470009A236 /* OldRouter.swift */; };
 		42225439267449DE0009A236 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42225438267449DE0009A236 /* ViewModel.swift */; };
 		4222543C2675A2970009A236 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4222543B2675A2970009A236 /* Detail.storyboard */; };
 		4232C7E8268583FD00A97A41 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232C7E7268583FD00A97A41 /* Coordinator.swift */; };
 		4232C7EC2685848800A97A41 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232C7EB2685848800A97A41 /* AppCoordinator.swift */; };
 		4232C7F626858F3C00A97A41 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232C7F526858F3C00A97A41 /* R.generated.swift */; };
+		4232C8662689459300A97A41 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232C8652689459300A97A41 /* Router.swift */; };
+		4232C8CA268C0F5A00A97A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232C8C9268C0F5900A97A41 /* ViewController.swift */; };
 		C92FD6BA8E3E9B4451FABEF8 /* Pods_Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EEF395AE103C78F66AEA72 /* Pods_Architecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,15 +39,15 @@
 		4222541E267394060009A236 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		42225423267443660009A236 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		422254262674436E0009A236 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		42225429267443870009A236 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		42225429267443870009A236 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		4222542C267443920009A236 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		4222542F267443A70009A236 /* DetailParentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParentRouter.swift; sourceTree = "<group>"; };
-		42225434267446470009A236 /* OldRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldRouter.swift; sourceTree = "<group>"; };
 		42225438267449DE0009A236 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4222543B2675A2970009A236 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		4232C7E7268583FD00A97A41 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4232C7EB2685848800A97A41 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4232C7F526858F3C00A97A41 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		4232C8652689459300A97A41 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4232C8C9268C0F5900A97A41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50EEF395AE103C78F66AEA72 /* Pods_Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFBEB56E5DB0C9A313AE510 /* Pods-Architecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Architecture.debug.xcconfig"; path = "Target Support Files/Pods-Architecture/Pods-Architecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,9 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				4222541E267394060009A236 /* DetailViewController.swift */,
-				42225429267443870009A236 /* DetailRouter.swift */,
+				42225429267443870009A236 /* DetailCoordinator.swift */,
 				4222542C267443920009A236 /* DetailViewModel.swift */,
-				4222542F267443A70009A236 /* DetailParentRouter.swift */,
 				4222543B2675A2970009A236 /* Detail.storyboard */,
 			);
 			path = Detail;
@@ -124,9 +123,10 @@
 		42225433267446380009A236 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				42225434267446470009A236 /* OldRouter.swift */,
 				42225438267449DE0009A236 /* ViewModel.swift */,
 				4232C7E7268583FD00A97A41 /* Coordinator.swift */,
+				4232C8652689459300A97A41 /* Router.swift */,
+				4232C8C9268C0F5900A97A41 /* ViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -287,14 +287,14 @@
 				4232C7EC2685848800A97A41 /* AppCoordinator.swift in Sources */,
 				42225424267443660009A236 /* MainCoordinator.swift in Sources */,
 				4222540C267393C30009A236 /* MainViewController.swift in Sources */,
-				42225435267446470009A236 /* OldRouter.swift in Sources */,
 				42225439267449DE0009A236 /* ViewModel.swift in Sources */,
+				4232C8CA268C0F5A00A97A41 /* ViewController.swift in Sources */,
 				42225408267393C30009A236 /* AppDelegate.swift in Sources */,
 				4232C7F626858F3C00A97A41 /* R.generated.swift in Sources */,
-				42225430267443A70009A236 /* DetailParentRouter.swift in Sources */,
 				4222541F267394060009A236 /* DetailViewController.swift in Sources */,
 				4232C7E8268583FD00A97A41 /* Coordinator.swift in Sources */,
-				4222542A267443870009A236 /* DetailRouter.swift in Sources */,
+				4232C8662689459300A97A41 /* Router.swift in Sources */,
+				4222542A267443870009A236 /* DetailCoordinator.swift in Sources */,
 				422254272674436E0009A236 /* MainViewModel.swift in Sources */,
 				4222542D267443920009A236 /* DetailViewModel.swift in Sources */,
 			);

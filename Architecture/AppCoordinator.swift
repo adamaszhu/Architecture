@@ -10,22 +10,42 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
 
+    private let router: RouterType
     private let window: UIWindow
-    private let navigationController: UINavigationController
 
     init(window: UIWindow, navigationController: UINavigationController) {
+        self.router = Router(navigationController: navigationController)
         self.window = window
-        self.navigationController = navigationController
+        super.init()
         window.configure(with: navigationController)
     }
 
-    convenience init() {
+    override convenience init() {
         self.init(window: UIWindow(), navigationController: UINavigationController())
     }
 
-    func start() {
-        let viewController = R.storyboard.main.instantiateInitialViewController()!
-        navigationController.pushViewController(viewController, animated: true)
+    override func start() {
+        setupMainCoordinator().start()
+    }
+
+    private func setupMainCoordinator() -> MainCoordinator {
+        let coordinator = MainCoordinator(router: router)
+        coordinator.showDetailAction = { [weak self] detail in
+            self?.setupDetailCoordinator(withDetail: detail).start()
+        }
+        addChildCoordinator(coordinator)
+        return coordinator
+    }
+
+    private func setupDetailCoordinator(withDetail detail: String) -> DetailCoordinator {
+        let coordinator = DetailCoordinator(router: router, detail: detail)
+        coordinator.willDismissDetailAction = { [weak self] in
+            let mainCoordinator = self?.childCoordinator(of: MainCoordinator.self)
+            mainCoordinator?.reset()
+            self?.removeChildCoordinator(of: DetailCoordinator.self)
+        }
+        addChildCoordinator(coordinator)
+        return coordinator
     }
 }
 

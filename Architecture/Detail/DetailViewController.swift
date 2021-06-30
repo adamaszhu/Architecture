@@ -8,14 +8,12 @@
 import Foundation
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: ViewController<DetailViewModel> {
 
     @IBOutlet private var label: UILabel!
 
-    private lazy var viewModel: DetailViewModel = DetailViewModel(router: DetailRouter(viewController: self))
-
-    func inject(parentRouter: DetailParentRouterType, detail: String) {
-        viewModel.inject(parentRouter: parentRouter, detail: detail)
+    func inject(detail: String) {
+        viewModel.inject(detail: detail)
     }
 
     override func viewDidLoad() {
