@@ -9,35 +9,29 @@ import Foundation
 import UIKit
 
 protocol MainCoordinatorType: CoordinatorType {
-
-    var showDetailAction: (String) -> Void { get set }
-    
     func showDetail(_ detail: String)
     func reset()
 }
 
 final class MainCoordinator: Coordinator, MainCoordinatorType {
 
-    var showDetailAction: (String) -> Void = { _ in }
+    private weak var viewController: MainViewController?
 
-    private let router: RouterType
-
-    private lazy var viewController: MainViewController = R.storyboard.main.instantiateInitialViewController()!
-
-    init(router: RouterType) {
-        self.router = router
-    }
-
-    override func start() {
+    override func start(from sender: Any?) {
+        let viewController = R.storyboard.main.instantiateInitialViewController()!
         viewController.inject(coordinator: self)
-        router.push(viewController)
+        navigationController?.viewControllers = [viewController]
+        self.viewController = viewController
     }
 
     func showDetail(_ detail: String) {
-        showDetailAction(detail)
+        DetailCoordinator(navigationController: navigationController,
+                          parentCoordinator: self,
+                          detail: detail)
+        .start()
     }
 
     func reset() {
-        viewController.reset()
+        viewController?.reset()
     }
 }

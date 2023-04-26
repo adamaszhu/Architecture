@@ -8,20 +8,19 @@
 import Foundation
 import UIKit
 
-final class DetailViewController: ViewController<DetailViewModel> {
+final class DetailViewController: ViewController<DetailViewModelType> {
 
     @IBOutlet private var label: UILabel!
-
-    func inject(detail: String) {
-        viewModel.inject(detail: detail)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        label.text = viewModel.detail
+    
+    func inject(coordinator: DetailCoordinatorType, detail: String) {
+        viewModel = DetailViewModel(coordinator: coordinator, detail: detail)
     }
 
     @IBAction private func close() {
-        viewModel.close()
+        viewModel?.close()
+    }
+    
+    override func initialize(with viewModel: any DetailViewModelType) {
+        label.text = viewModel.detail
     }
 }

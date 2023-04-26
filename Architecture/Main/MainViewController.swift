@@ -7,10 +7,14 @@
 
 import UIKit
 
-class MainViewController: ViewController<MainViewModel> {
+final class MainViewController: ViewController<MainViewModelType> {
 
     @IBOutlet private var textField: UITextField!
-
+    
+    func inject(coordinator: MainCoordinatorType) {
+        viewModel = MainViewModel(coordinator: coordinator)
+    }
+    
     func reset() {
         textField.text = nil
     }
@@ -19,7 +23,7 @@ class MainViewController: ViewController<MainViewModel> {
         guard let detail = textField.text else {
             return
         }
-        viewModel.showDetail(detail)
+        viewModel?.showDetail(detail)
     }
 }
 
