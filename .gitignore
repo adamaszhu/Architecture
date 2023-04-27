@@ -1,0 +1,27 @@
+# General
+.DS_Store
+
+# Xcode
+build/*
+xcuserdata
+*.orig
+
+# CocoaPods
+Pods/
+Gemfile.lock
+
+# Fastlane
+fastlane/report.xml
+fastlane/test_output
+fastlane/README.md
+Preview.html
+*.mobileprovision
+vendor/
+
+# Temp files
+*.profraw
+tmp/
+
+# Auto generation
+*.generated.swift
+/.MWebMetaData
