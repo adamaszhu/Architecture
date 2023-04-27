@@ -11,9 +11,9 @@ protocol MainViewModelType: ViewModelType {
     func showDetail(_ detail: String)
 }
 
-final class MainViewModel: ViewModel<MainCoordinator>, MainViewModelType {
+final class MainViewModel: ViewModel<MainCoordinatorType>, MainViewModelType {
 
     func showDetail(_ detail: String) {
-        coordinator?.showDetail(detail)
+        coordinator.showDetail(detail)
     }
 }

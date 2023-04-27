@@ -11,19 +11,20 @@ protocol DetailViewModelType: ViewModelType {
 
     var detail: String { get }
     
-    func inject(detail: String)
     func close()
 }
 
-final class DetailViewModel: ViewModel<DetailCoordinator>, DetailViewModelType {
+final class DetailViewModel: ViewModel<DetailCoordinatorType>, DetailViewModelType {
 
-    private (set) var detail: String = ""
+    let detail: String
 
-    func inject(detail: String) {
+    init(coordinator: DetailCoordinatorType,
+         detail: String) {
         self.detail = detail
+        super.init(coordinator: coordinator)
     }
 
     func close() {
-        coordinator?.close()
+        coordinator.close()
     }
 }

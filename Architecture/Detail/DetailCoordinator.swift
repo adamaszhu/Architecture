@@ -6,36 +6,33 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DetailCoordinatorType: CoordinatorType {
-
-    var willDismissDetailAction: () -> Void { get set }
-    
     func close()
 }
 
 final class DetailCoordinator: Coordinator, DetailCoordinatorType {
-
-    var willDismissDetailAction: () -> Void = {}
-
-    private let router: RouterType
+    
     private let detail: String
-
-    private lazy var viewController: DetailViewController = R.storyboard.detail.instantiateInitialViewController()!
-
-    init(router: RouterType, detail: String) {
-        self.router = router
+    
+    init(navigationController: UINavigationController?,
+         parentCoordinator: CoordinatorType?,
+         detail: String) {
         self.detail = detail
+        super.init(navigationController: navigationController, parentCoordinator: parentCoordinator)
     }
-
-    override func start() {
-        viewController.inject(coordinator: self)
-        viewController.inject(detail: detail)
-        router.push(viewController)
+    
+    override func start(from sender: Any?) {
+        let viewController = R.storyboard.detail.instantiateInitialViewController()!
+        viewController.inject(coordinator: self, detail: detail)
+        navigationController?.pushViewController(viewController, animated: true)
     }
-
+    
     func close() {
-        willDismissDetailAction()
-        router.pop()
+        if let mainCoordinator = parentCoordinator as? MainCoordinatorType {
+            mainCoordinator.reset()
+        }
+        dismiss()
     }
 }

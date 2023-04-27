@@ -6,20 +6,20 @@
 //
 
 public protocol ViewModelType: AnyObject {
-
+    
     associatedtype Coordinator
-
-    init()
-    func inject(coordinator: Coordinator)
+    
+    /// The coordinator that controls the screen
+    var coordinator: Coordinator { get }
 }
 
-open class ViewModel<Coordinator: CoordinatorType>: ViewModelType {
-
-    public private (set) weak var coordinator: Coordinator?
-
-    required public init() {}
-
-    public func inject(coordinator: Coordinator) {
+open class ViewModel<Coordinator>: ViewModelType {
+    
+    public let coordinator: Coordinator
+    
+    /// Initialize the view model
+    /// - Parameter coordinator: The coordinator that controls the screen
+    public init(coordinator: Coordinator) {
         self.coordinator = coordinator
     }
 }
